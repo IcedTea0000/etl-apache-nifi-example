@@ -1,0 +1,48 @@
+CREATE SCHEMA `olist` ;
+
+CREATE TABLE `olist`.`olist_customers_dataset` (
+  `customer_id` VARCHAR(100) NULL,
+  `customer_unique_id` VARCHAR(100) NOT NULL,
+  `customer_zip_code_prefix` VARCHAR(15) NULL,
+  `customer_city` VARCHAR(45) NULL,
+  `customer_state` VARCHAR(45) NULL);
+
+CREATE TABLE `olist`.`olist_orders_dataset` (
+  `order_id` VARCHAR(100) NOT NULL,
+  `customer_id` VARCHAR(100) NULL, 
+  `order_status` VARCHAR(45) NULL,
+  `order_purchase` VARCHAR(45) NULL,
+  `order_purchase_timestamp` VARCHAR(100) NULL,
+  `order_approved_at` VARCHAR(100) NULL,
+  `order_delivered_carrier_date` VARCHAR(100) NULL,
+  `order_delivered_customer_date` VARCHAR(100) NULL,
+  `order_estimated_delivery_date` VARCHAR(100) NULL);
+
+
+CREATE TABLE `olist`.`olist_orders_items_dataset` (
+  `order_id` VARCHAR(100) NULL,
+  `order_item_id` VARCHAR(100) NULL,
+  `product_id` VARCHAR(100) NULL,
+  `seller_id` VARCHAR(100) NULL,
+  `shipping_limit_date` VARCHAR(100) NULL,
+  `price` VARCHAR(100) NULL,
+  `freight_value` VARCHAR(100) NULL);
+  
+  
+CREATE TABLE `olist`.`olist_order_reviews_dataset` (
+  `review_id` VARCHAR(100) NOT NULL,
+  `order_id` VARCHAR(100) NULL,
+  `review_score` VARCHAR(100) NULL,
+  `review_comment_title` VARCHAR(300) NULL,
+  `review_comment_message` VARCHAR(1000) NULL,
+  `review_creation_date` VARCHAR(100) NULL,
+  `review_answer_timestamp` VARCHAR(100) NULL);
+ 
+ 
+ 
+ CREATE SCHEMA `newmart` ;
+
+
+CREATE TABLE `newmart`.`cif_client` (
+  `client_id` VARCHAR(100) NOT NULL,
+ PRIMARY KEY (`client_id`));
